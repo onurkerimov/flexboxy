@@ -1,0 +1,43 @@
+nav
+  height: $nav-height
+  line-height: $nav-height
+  background: $nav-bgcolor
+  box-shadow: none
+
+  #nav-logo
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-weight: 400
+    font-size: 25px
+    margin: -1px 0 0 12px
+
+  >*
+    float: left
+    
+
+  ul > li 
+    padding: 2px
+    margin-top: 5px
+  
+  button.square
+    display: flex
+    width: $navbar-button-size
+    height: $navbar-button-size
+    padding: 0
+
+    img
+      margin: auto
+      width: 24px
+  
+  li.title
+    font-size: 10px    
+    color: rgba(255,255,255, 0.44)
+    line-height: 35px
+    font-weight: 400
+    margin-left: 10px
+
+  @media (max-width: 760px)
+    li.title
+      display: none
+
+  .btn-small[disabled], .btn-small:disabled
+    background-color: #343d4a !important

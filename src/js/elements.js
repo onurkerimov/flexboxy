@@ -1,0 +1,1 @@
+export let workspace = document.querySelector('#workspace')

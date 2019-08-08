@@ -1,0 +1,179 @@
+%flex-1
+  display: flex
+  flex: 1
+  
+.ui-flex
+  @extend %flex-1
+
+*
+  box-sizing: border-box
+
+html, body
+  height: 100vh
+  background: $main-bgcolor
+  touch-action: none
+  user-select: none
+  -moz-user-select: none
+  -webkit-user-drag: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  overflow: hidden
+  font: 400 13px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif
+
+
+#app-wrapper
+  height: 100vh
+  display: flex
+  flex-flow: row nowrap
+  .main
+    flex: 1
+    display: flex
+    flex-flow: column nowrap
+
+    #workspace-window-wrapper
+      flex: 1
+    
+#workspace-window
+  @extend %flex-1
+  flex-flow: column wrap
+  margin: auto
+
+  min-width: 200px
+  min-height: 200px
+  width: calc(100% - 30px)
+  height: calc(100% - 65px)
+  margin-top: 12px
+
+  border: 1px solid $gripper-borderColor
+  border-radius: 2px
+  box-shadow: -2px -2px 18px -2px rgba(0, 0, 0, 0.27)
+
+  #workspace-wrapper
+    @extend %flex-1
+    background: rgba(255,255,255,0.92)
+    z-index: 50
+
+    >#workspace
+      overflow: hidden
+      display: flex
+      width: 100%
+      height: 100%
+
+      &.tool-slice
+        cursor: none
+
+      &.tool-grouping
+        padding: 5px !important
+
+        .separator
+          display: none !important
+        >div
+          div
+            transition: margin 0.4s
+            padding: 5px !important
+            margin: 5px !important
+        .color1
+          background: #a7c4d3
+        .color2
+          background: #efeff0
+
+      *
+        display: flex
+        flex: 1 0 100%
+        margin: 0
+        padding: 0
+
+      .child
+        background: transparent
+
+      .separator
+        flex: 0 !important
+        display: flex !important
+        justify-content: center
+        align-items: center
+        position: relative
+
+        .separator-inner
+          position: absolute
+          pointer-events: none
+          background: $separatorBody-background
+            
+        .workspace-gripper
+          position: absolute
+          z-index: 100
+          background: $resizeGripper-background
+          border-radius: 4px
+          &:hover
+            background: $resizeGripperHover-background
+
+    >#workspace-canvas
+      pointer-events: none
+      position: absolute
+
+
+.row > .separator > .separator-inner
+  top: 0
+  bottom: 0
+  width: $separator-size !important
+.col > .separator > .separator-inner
+  left: 0
+  right: 0
+  height: $separator-size !important
+
+.row > .separator > .workspace-gripper
+  width: $resizeGripper-width
+  height: 20%
+  max-height: $resizeGripper-length
+  cursor: ew-resize
+.col > .separator > .workspace-gripper
+  height: $resizeGripper-width
+  width: 20%
+  max-width: $resizeGripper-length
+  cursor: ns-resize
+
+.row, .ui-row
+  flex-flow: row nowrap
+
+.col, .ui-col
+  flex-flow: column nowrap
+
+#message
+  height: 35px
+  line-height: 35px
+  padding-left: 12px
+  color: black
+  background-color: #72a1b7
+
+  a
+    color: black
+    text-decoration: underline
+
+.btn-small
+  background-color: #607d8b
+  &:hover
+    background-color: #72a1b7
+  &:focus, &.active
+    background-color: #76b2ce
+.toast
+  background-color: #424b56 !important
+
+#export
+  z-index: 9999
+  .modal
+    width: 80%
+  .modal-content
+    padding: 0
+    display: flex
+    flex-flow: row nowrap
+    >* 
+      flex: 1
+      overflow: hidden
+      position: relative
+      button
+        position: absolute
+        right: 25px
+        bottom: 15px
+        z-index: 100
+      .CodeMirror
+        width: 100%
+
+  
