@@ -9,6 +9,7 @@ Flexboxy is an open source tool for building flexbox layouts easily. You can sim
 
 ## Libraries
 - CodeMirror by Marijn Haverbeke (https://codemirror.net/)
+- Materialize by Alvin Wang (https://materializecss.com/)
 - Perfect Scrollbar by Hyunje Alex Jun (https://github.com/noraesae/perfect-scrollbar)
 - clipboard.js by Zeno Rocha (https://clipboardjs.com/)
 
