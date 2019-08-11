@@ -1,9 +1,5 @@
 # flexboxy
-<<<<<<< HEAD
 Flexboxy is an open source editor for building flexbox-based layouts. The online editor lets you build templates faster than ever, by generating HTML and CSS for you. See it in action in [here](http://flexboxy.com/).
-=======
-Flexboxy is an open source tool for building flexbox layouts easily. You can simply draw the base template of your web projects and **flexboxy** generates HTML and CSS code for you. See it in action in [here](http://flexboxy.com/).
->>>>>>> 091979916767cd3833741d56db8c3a5c211bb7a1
 
 ## Technologies Used
 - Webpack
