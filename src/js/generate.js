@@ -18,26 +18,19 @@ let html_btn = export_modal.querySelector('#copy-html')
 let css_btn = export_modal.querySelector('#copy-css')
 
 new ClipboardJS('#copy-html', {
-    text: function() {
-        console.log(htmlEditor.getValue())
-        return htmlEditor.getValue()
-    }
+    text: () => htmlEditor.getValue()
 }) 
 
 new ClipboardJS('#copy-css', {
-    text: function() {
-        return cssEditor.getValue()
-    }
+    text: () => cssEditor.getValue()
 })
 
 var htmlEditor = CodeMirror(html_editor, {
-    value: '',
     lineNumbers: true,
     mode: 'xml'
 })
 
 var cssEditor = CodeMirror(css_editor, {
-    value: '',
     lineNumbers: true,
     mode: 'css'
 })
@@ -60,6 +53,7 @@ export let generate = {
         ResultCSS = prepareCSS()
         let clone = createResultHTMLTree(workspace)
         ResultHTML = tidyXML(clone.innerHTML)
+        console.log(workspace)
         refreshTree(workspace.children[0])
     }
 }
@@ -68,7 +62,8 @@ let i, flexGrowArray = [], approxFlexGrowArray = [], classNameArray = []
 
 // This function is here for TreeView to work, also builds class names for the export
 function modifyOriginalTree(el) {
-
+    
+    flexGrowArray = []
     approxFlexGrowArray = []
     classNameArray = []
     i = 0
@@ -79,6 +74,13 @@ function modifyOriginalTree(el) {
             // TreeView identifies the div this way, when hovered
             el.dataset.i = i
             i++
+
+            let ROW = $(el).hasClass('row')
+            let COL = $(el).hasClass('col')
+            
+            el.removeAttribute('class')
+            if(ROW) $(el).addClass('row')
+            if(COL) $(el).addClass('col')
 
             let ch = el.children
 

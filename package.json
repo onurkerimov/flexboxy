@@ -40,9 +40,9 @@
 		"raw-loader": "^3.0.0"
 	},
 	"dependencies": {
-		"autoprefixer": "^9.6.1",
 		"clipboard": "^2.0.4",
 		"codemirror": "^5.48.2",
+		"eslint-config-google": "^0.12.0",
 		"materialize-css": "^1.0.0-rc.2",
 		"perfect-scrollbar": "^1.4.0"
 	}

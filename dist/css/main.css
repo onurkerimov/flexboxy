@@ -136,6 +136,9 @@ html, body {
 .toast {
   background-color: #424b56 !important; }
 
+.material-tooltip {
+  background-color: #22223a !important; }
+
 #export {
   z-index: 9999; }
   #export .modal {

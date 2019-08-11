@@ -1,6 +1,4 @@
 import PerfectScrollbar from 'perfect-scrollbar'
-
-
 import { UI_canvas } from './ui_canvas'
 
 let tree_inner = document.querySelector('#tree-inner')

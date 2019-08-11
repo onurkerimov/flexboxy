@@ -39,8 +39,7 @@ let dragStart = (e) => {
 
     if (e.buttons === 1 || e.touches) {
         if(e.touches) e = e.touches[0]
-            console.log(e.target)
-
+    
         el = e.target.parentElement
 
         let prevSibling = el.previousElementSibling
@@ -89,6 +88,9 @@ let dragMove = (e) => {
     if (!(prevSize <= 0 || nextSize <= 0)) {
         el.previousElementSibling.style.flexGrow = prevSize
         el.nextElementSibling.style.flexGrow = nextSize
+        
+        el.previousElementSibling.dataset.flexgrow = prevSize
+        el.nextElementSibling.dataset.flexgrow = nextSize
     }
 
     // This part handles grid snapping
@@ -117,6 +119,8 @@ let dragMove = (e) => {
         el.previousElementSibling.style.flexGrow = prevSize
         el.nextElementSibling.style.flexGrow = nextSize
         
+        el.previousElementSibling.dataset.flexgrow = prevSize
+        el.nextElementSibling.dataset.flexgrow = nextSize
     }
 }
 

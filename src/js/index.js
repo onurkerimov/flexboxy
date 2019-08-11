@@ -30,9 +30,6 @@ UI_canvas.init()
 history.init()
 grid.init()
 
-// ## Message
-let message = document.querySelector('#message')
-
 // ## Toolbar Related Things
 // Toolbar elements
 let slice_tool = document.querySelector('#slice-tool')
@@ -74,3 +71,11 @@ $.enhanceZoom(`
 .col > .separator > .separator-inner, 
 .row > .separator > .separator-inner`,
     { stretch: true, factor: 1 })
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    let elems = document.querySelectorAll('.tooltipped')
+    let instances = M.Tooltip.init(elems, {
+        margin:0, inDuration: 100, outDuration: 0
+    })
+})

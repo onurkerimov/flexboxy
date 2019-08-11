@@ -5,6 +5,11 @@
     Author      Marijn Haverbeke
     License     MIT
 
+    Project     Materialize
+    URL         https://materializecss.com/
+    Author      Alvin Wang
+    License     MIT
+
     Project     Perfect Scrollbar
     URL         https://github.com/noraesae/perfect-scrollbar
     Author      Hyunje Alex Jun
