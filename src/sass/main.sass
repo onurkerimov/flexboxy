@@ -10,8 +10,8 @@
 
 html, body
   height: 100vh
-  background: $main-bgcolor
-  touch-action: none
+  background-color: #935d8c;
+  background-image: linear-gradient(45deg, #e37682 15%, #5f4d93 85%);  touch-action: none
   user-select: none
   -moz-user-select: none
   -webkit-user-drag: none
@@ -21,7 +21,13 @@ html, body
 
 
 #app-wrapper
-  height: 100vh
+  width: calc(100% - 60px)
+  height: calc(100% - 60px)
+  margin: 30px auto
+  border-radius: 8px
+  box-shadow: 0 0 10px rgba(0,0,0,0.3)
+  overflow: hidden
+
   display: flex
   flex-flow: row nowrap
   .main
@@ -31,6 +37,7 @@ html, body
 
     #workspace-window-wrapper
       flex: 1
+      background: $color-4
     
 #workspace-window
   @extend %flex-1
@@ -39,13 +46,13 @@ html, body
 
   min-width: 200px
   min-height: 200px
-  width: calc(100% - 30px)
-  height: calc(100% - 65px)
-  margin-top: 12px
+  width: calc(100% - 70px)
+  height: calc(100% - 95px)
+  margin-top: 25px
 
   border: 1px solid $gripper-borderColor
   border-radius: 2px
-  box-shadow: -2px -2px 18px -2px rgba(0, 0, 0, 0.27)
+  box-shadow: -2px -2px 12px -2px rgba(0, 0, 0, 0.2)
 
   #workspace-wrapper
     @extend %flex-1
@@ -141,18 +148,18 @@ html, body
   line-height: 35px
   padding-left: 12px
   color: black
-  background-color: #72a1b7
+  background-image: linear-gradient(45deg, #e37682 15%, #5f4d93 85%)
 
   a
     color: black
     text-decoration: underline
 
 .btn-small
-  background-color: #607d8b
+  background-color: $color-5
   &:hover
-    background-color: #72a1b7
+    background-color: $color-6
   &:focus, &.active
-    background-color: #76b2ce
+    background-color: $color-7
 .toast   
   background-color: #424b56 !important
 .material-tooltip
