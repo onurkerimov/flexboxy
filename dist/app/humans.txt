@@ -1,0 +1,48 @@
+/* LIBRARIES */
+
+    Project     CodeMirror
+    URL         https://codemirror.net/
+    Author      Marijn Haverbeke
+    License     MIT
+
+    Project     Materialize
+    URL         https://materializecss.com/
+    Author      Alvin Wang
+    License     MIT
+
+    Project     Perfect Scrollbar
+    URL         https://github.com/noraesae/perfect-scrollbar
+    Author      Hyunje Alex Jun
+    License     MIT
+
+    Project     clipboard.js
+    URL         https://clipboardjs.com/
+    Author      Zeno Rocha
+    License     MIT
+
+/* ICONS */
+
+    Project     Pencil icon
+    URL         http://thenounproject.com/
+    Author      mikicon
+    License     $
+
+    Project     Resize Icon
+    URL         http://thenounproject.com/
+    Author      Free Icons
+    License     $
+
+    Project     Grid Icon
+    URL         http://thenounproject.com/
+    Author      iconbox89
+    License     $
+
+    Project     Undo Icon
+    URL         http://material.io/tools/icons/
+    Author      Material Design
+    License     Apache 2.0
+
+    Project     Redo Icon
+    URL         http://material.io/tools/icons/
+    Author      Material Design
+    License     Apache 2.0

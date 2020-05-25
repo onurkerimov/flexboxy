@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Flexbox layout generator that exports HTML and CSS for you.">
+<meta name="author" content="Onur Kerimov">
+<link rel="manifest" href="site.webmanifest">
+<link rel="apple-touch-icon" href="icon.png">
+    <title>flexboxy - Web's flexbox editor</title>
+    <link rel="stylesheet" href="./css/materialize.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+
+</head>  
+   
+<body>
+    <div id="export" class="modal">
+  <div class="modal-content">
+    <div class="html-editor">
+      <button class="waves-effect waves-light btn-small square" id="copy-html">
+        Copy HTML
+      </button>
+    </div>
+    <div class="css-editor">
+      <button class="waves-effect waves-light btn-small square" id="copy-css">
+        Copy CSS
+      </button>    
+    </div>
+  </div>
+</div>
+    <div id="app-wrapper">
+        <div class="main">
+            <nav>
+
+    <div id="nav-logo">
+        flexboxy
+    </div>
+    <ul id="nav-tools">
+        <li class="title">
+            TOOLS
+        </li>
+        <li>
+            <button class="waves-effect waves-light btn-small square tooltipped" data-tooltip="Draw" id="slice-tool">
+                <img src="./assets/draw.svg" />
+            </button>
+        </li>
+
+        <li>
+            <button class="waves-effect waves-light btn-small square tooltipped" data-tooltip="Resize" id="resize-tool">
+                <img src="./assets/resize.svg" />
+            </button>
+        </li>
+
+        <li>
+            <button class="waves-effect waves-light btn-small square tooltipped" data-tooltip="View Grouping" id="grouping-tool">
+                <img src="./assets/grouping.svg" />
+            </button>
+        </li>
+    </ul>
+
+    <ul id="nav-history">
+        <li class="title">
+            HISTORY
+        </li>
+        <li>
+            <button class="waves-effect waves-light btn-small square tooltipped" data-tooltip="Undo"  id="undo">
+                <img src="./assets/undo.svg" />
+            </button>
+        </li>
+
+        <li>
+            <button class="waves-effect waves-light btn-small square tooltipped" data-tooltip="Redo"  id="redo">
+                <img src="./assets/redo.svg" />
+            </button>
+        </li>
+    </ul>
+
+    <div id="toast-container"></div>
+</nav>
+            <div id="workspace-window-wrapper">
+    <div id="message">
+        <b>Flexboxy</b> is an <a href="https://github.com/onurkerimov/flexboxy"><b>open source</b></a> tool for building flexbox layouts easily. Made with ❤️ by <a href="https://github.com/onurkerimov"><b>@onurkerimov</b></a>. 
+    </div>
+    <div id="workspace-window">
+        <div class="ui-row ui-flex">
+            <div id="workspace-wrapper">
+                <div id="workspace">
+    <div></div>
+</div>
+<canvas id="workspace-canvas"></canvas>
+            </div>
+            <div id="ui-right-gripper" class="gripper">
+                <img src="./assets/right-grip.png"/>
+            </div>
+        </div>
+        <div class="ui-row ui-fixedsize">
+            <div id="ui-bottom-gripper" class="gripper">
+                <img src="./assets/bottom-grip.png"/>
+            </div>
+            <div id="ui-diagonal-gripper" class="gripper">
+                <img src="./assets/diagonal-grip.png"/>
+            </div>
+        </div>
+    </div>
+</div> 
+        </div>  
+        <div class="sidebar">
+            <div class="thin">
+    <button id="export-button" data-target="export" class="waves-effect waves-light btn-small modal-trigger">
+        <i class="material-icons left">
+            <img src="./assets/export-arrow.svg" />
+        </i>
+        EXPORT HTML + CSS
+    </button>
+</div>
+
+
+<div class="thin grid-options">
+    <div>
+        <div class="sidebar-title row">
+            <section class="col s3">Grid</section>
+            <section class="col s9">
+
+                <div class="switch right">
+                    <label class="tooltipped" data-tooltip="Snap to Grid" >SNAP
+                        <input type="checkbox" id="snaptogrid" checked="checked" />
+                        <span class="lever"></span>
+                    </label>
+                </div>
+                <div class="switch right">
+                    <label class="tooltipped" data-tooltip="Grid Visibility">VISIBLE
+                        <input type="checkbox" id="grid" checked="checked" />
+                        <span class="lever"></span>
+                    </label>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="row">
+        <section class="col s4">
+            <div>Columns</div>
+            <div>
+                <input type="text" id="grid-columns" value="12">
+            </div>
+        </section>
+        <section class="col s4">
+            <div>Rows</div>
+            <div>
+                <input type="text" id="grid-rows" value="6">
+            </div>
+        </section>
+
+        <section class="col s4">
+            <div>Sub</div>
+            <div>
+                <input type="text" id="grid-sub" value="2">
+            </div>
+        </section>
+    </div>
+
+</div>
+
+
+<div class="tree">
+    <div>
+        <div class="sidebar-title tree-title row">
+            Tree
+        </div>
+    </div>
+    <div class="tree-wrapper">
+        <ul id="tree-inner"></ul>    
+    </div>
+    
+
+
+
+</div>
+
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/prettier@1.13.0/standalone.js"></script>
+    <script src="./js/main.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145300540-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-145300540-1');
+    </script>
+</body>
+
+</html>
